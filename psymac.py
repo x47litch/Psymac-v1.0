@@ -80,7 +80,7 @@ if __name__ == "__main__":
                 change_mac_address(iface, new_mac_address)
                 # check if it's really changed
                 new_mac_address = get_current_mac_address(iface)
-                loader = Loader(f"Please waiting a few second....",f"{old_mac_address} ==> {new_mac_address}")
+                loader = Loader(f"Please waiting a few second....",f"{old_mac_address} ==> {new_mac_address}",0.05)
                 time.sleep(5)
                 loader.stop();
 
@@ -97,6 +97,6 @@ if __name__ == "__main__":
                 change_mac_address(iface, new_mac_address)
                 # check if it's really changed
                 new_mac_address = get_current_mac_address(iface)
-                loader = Loader(f"Please waiting a few second....",f"{old_mac_address} ==> {new_mac_address}")
+                loader = Loader(f"Please waiting a few second....",f"{old_mac_address} ==> {new_mac_address}",0.05)
                 time.sleep(2)
                 loader.stop();
