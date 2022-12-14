@@ -97,6 +97,5 @@ if __name__ == "__main__":
                 change_mac_address(iface, new_mac_address)
                 # check if it's really changed
                 new_mac_address = get_current_mac_address(iface)
-                loader = Loader(f"Please waiting a few second....",f"{old_mac_address} ==> {new_mac_address}",0.05).start()
                 time.sleep(2)
-                loader.stop();
+                print(f"\r{Fore.GREEN}[{datetime.now()}]{Fore.RESET} {old_mac_address} ==> {new_mac_address}", flush=True)
