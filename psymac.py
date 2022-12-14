@@ -91,11 +91,13 @@ if __name__ == "__main__":
             elif args.mac:
                 # if mac is set, use it instead
                 new_mac_address = args.mac
-                # get the current MAC address
-                old_mac_address = get_current_mac_address(iface)
-                # change the MAC address
-                change_mac_address(iface, new_mac_address)
-                # check if it's really changed
-                new_mac_address = get_current_mac_address(iface)
-                time.sleep(2)
-                print(f"\r{Fore.GREEN}[{datetime.now()}]{Fore.RESET} {old_mac_address} ==> {new_mac_address}", flush=True)
+            # get the current MAC address
+            old_mac_address = get_current_mac_address(iface)
+            # change the MAC address
+            change_mac_address(iface, new_mac_address)
+            # check if it's really changed
+            new_mac_address = get_current_mac_address(iface)
+            ##print(f"\r{Fore.GREEN}[{datetime.now()}]{Fore.RESET} {self.end}", flush=True)
+            loader = Loader(f"Please waiting a few second....",f"{old_mac_address} ==> {new_mac_address}",0.05).start()
+            time.sleep(2)
+            loader.stop();
