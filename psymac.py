@@ -36,7 +36,7 @@ def get_random_mac_address():
 
 def get_current_mac_address(iface):
     # use the ifconfig command to get the interface details, including the MAC address
-    output = subprocess.check_output(f"ifconfig {iface}", shell=True).decode()
+    output = subprocess.check_output(f"ipconfig / {iface}", shell=True).decode()
     return re.search("ether (.+) ", output).group().split()[1].strip()
 
 
