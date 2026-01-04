@@ -3,7 +3,7 @@ import subprocess
 import string
 import random
 import re
-import pyfiglet;
+import pyfiglet
 import time
 import argparse
 from colorama import Fore,init
