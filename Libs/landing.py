@@ -3,7 +3,7 @@ from shutil import get_terminal_size
 from threading import Thread
 from time import sleep
 from datetime import datetime
-from colorama import init, Fore, Back, Style;
+from colorama import Fore;
 
 class Loader:
     def __init__(self, desc="Loading...", end="Done!", timeout=0.1):
@@ -20,7 +20,6 @@ class Loader:
         self.timeout = timeout
 
         self._thread = Thread(target=self._animate, daemon=True)
-        #self.steps = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
         self.steps = ['/','—','\\','|']
         self.done = False
 
@@ -45,5 +44,4 @@ class Loader:
         print(f"\r{Fore.GREEN}[{datetime.now()}]{Fore.RESET} {self.end}", flush=True)
 
     def __exit__(self, exc_type, exc_value, tb):
-        # handle exceptions with those variables ^
         self.stop()
